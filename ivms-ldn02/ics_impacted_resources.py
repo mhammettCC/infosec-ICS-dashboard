@@ -651,18 +651,18 @@ def sendto_google_cloud2(filename, bucket_name, blob_name):
 owner = ["MS","CS","TPC","sfc","SEEDs"]
 excluding_move = []
 copy_files = ['ICS_remediation_historical.csv']
-slack_channel = 'cs_test'
+slack_channel = 'insightconnect-monitoring'
 script_running_location = 'London Scan Engine'
 days_to_keep_in_historical = 45
 
 #Static Variables
 data_path = 'data/ICS'
-slack_token = read_configs('../config.ini', 'Slack', 'SLACK_API_KEY')
-api_key = read_configs('../config.ini', 'Rapid7', 'ICS_KEY')
-base_url = read_configs('../config.ini', 'Rapid7', 'ICS_BASE_URL')
+slack_token = read_configs('config.ini', 'Slack', 'SLACK_API_KEY')
+api_key = read_configs('config.ini', 'Rapid7', 'ICS_KEY')
+base_url = read_configs('config.ini', 'Rapid7', 'ICS_BASE_URL')
 enrich_update_path = f'{data_path}/ICS_impacted_complete_pre_compare.csv' # Do not change filename
 bucket_name = "infosec_dashboard_v3"
-google_path = "../gc.json"
+google_path = "gc.json"
 send_to_google = f'{data_path}/ICS_impacted_complete.csv'
 
 
