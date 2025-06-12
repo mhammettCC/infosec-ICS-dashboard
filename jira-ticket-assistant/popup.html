@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 10px;
+      width: 640px; /* wide enough for two columns */
+      box-sizing: border-box;
+    }
+
+    #container {
+      display: flex;
+      gap: 20px;
+    }
+
+    #leftPane, #rightPane {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h3, h4 {
+      margin: 10px 0 4px;
+    }
+
+    input, textarea, button, select {
+      width: 100%;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    #status {
+      margin-top: 10px;
+      color: green;
+    }
+
+    .template-block {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    .template-block h4 {
+      margin-bottom: 4px;
+    }
+
+    .template-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+
+    .template-actions button {
+      width: 48%;
+    }
+
+    /* Add some spacing between add form and templates list */
+    #addTemplateSection {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- Left side: Jira Settings only -->
+    <div id="leftPane">
+      <h2>Jira Settings</h2>
+      <h4>Domain</h4>
+      <input type="text" id="domain" placeholder="yourcompany.atlassian.net" />
+      <h4>Username</h4>
+      <input type="text" id="email" placeholder="username" />
+      <h4>Project</h4>
+      <input type="text" id="project" placeholder="Project Key (e.g. TEST)" />
+      <button id="save">Save Settings</button>
+      <div id="status"></div>
+    </div>
+
+    <!-- Right side: Add Template (top) + Templates list (bottom) -->
+    <div id="rightPane">
+      <div id="addTemplateSection">
+        <h2>Create Template</h2>
+        <input type="text" id="newKey" placeholder="Template Key (e.g. template1)" />
+        <input type="text" id="newSummary" placeholder="Summary Prefix (e.g. [Task])" />
+        <input type="text" id="newLabels" placeholder="Comma-separated labels (e.g. 2025,Q2)" />
+        <textarea id="newDescription" placeholder="One line per description bullet" style="height: 80px;"></textarea>
+        <button id="addTemplate">Add Template</button>
+      </div>
+
+      <h2>Templates</h2>
+      <div id="templatesContainer"></div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

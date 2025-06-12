@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 10px;
+    width: 300px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  select, input[type="text"], button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  #status {
+    margin-top: 10px;
+    color: green;
+  }
+
+  /* Make quarters and impacts appear in columns */
+  #quarters, #impacts {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  #quarters {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #impacts {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Checkbox label and input alignment */
+  #quarters label, #impacts label {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  #quarters input[type="checkbox"],
+  #impacts input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <h3>Create Jira Ticket</h3>
+
+  <label for="template">Select Template</label>
+  <select id="template">
+    <option value="">-- No Template --</option>
+  </select>
+
+  <label>Select Quarter(s)</label>
+  <div id="quarters">
+    <label><input type="checkbox" value="Q1" /> Q1</label>
+    <label><input type="checkbox" value="Q2" /> Q2</label>
+    <label><input type="checkbox" value="Q3" /> Q3</label>
+    <label><input type="checkbox" value="Q4" /> Q4</label>
+  </div>
+
+  <label>Select Iteration(s)</label>
+  <div id="impacts">
+    <label><input type="checkbox" value="I1" /> I1</label>
+    <label><input type="checkbox" value="I2" /> I2</label>
+    <label><input type="checkbox" value="I3" /> I3</label>
+    <label><input type="checkbox" value="I4" /> I4</label>
+    <label><input type="checkbox" value="I5" /> I5</label>
+    <label><input type="checkbox" value="I6" /> I6</label>
+  </div>
+
+  <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
+    <input type="checkbox" id="isStory" />
+    Create as Story
+  </label>
+
+  <label for="priority">Priority</label>
+  <select id="priority">
+  <option value="High">High</option>
+  <option value="Critical">Critical</option>
+  <option value="Medium">Medium</option>
+  <option value="Low">Low</option>
+  </select>
+
+  <label for="summary">Summary</label>
+  <input type="text" id="summary" placeholder="Enter summary..." />
+
+  <button id="create">Create Ticket</button>
+  <button id="settings">Settings</button>
+
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

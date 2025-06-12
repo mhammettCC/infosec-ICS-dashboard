@@ -1,0 +1,15 @@
+https://gitlab.pccwglobal.com/mhammett/infosec-jira-extension/-/tree/main/jira-ticket-assistant
+
+Loading -
+Go to chrome://extensions
+Enable Developer mode
+Click Load unpacked
+Select folder
+
+About Stored Values -
+How to View/Debug Stored Values
+If you want to manually check or clear these settings:
+Open Developer Tools in Chrome (on any tab).
+Go to the Application tab.
+In the left pane, find Storage, Extension Storage,chrome-extension://<your-extension-id>
+Click on it and look under chrome.storage.sync to view values.

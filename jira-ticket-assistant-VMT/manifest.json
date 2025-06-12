@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Jira Ticket Creator",
+  "version": "1.1",
+  "description": "Create Jira tickets from a popup.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png"
+    }
+  },
+  "options_page": "options.html",
+  "host_permissions": [
+    "*://*.atlassian.net/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png"
+  }
+}
